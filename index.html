@@ -10,18 +10,16 @@
 
 
 <body>
-    <div class="p-5 text-center bg-light">
-        <h1 class="mb-3">TV Search</h1>
-        <form>
-            <div class="form-group">
-                <label for="tvinput">TV Show</label>
-                <input type="text" class="form-control" id="tvinput" aria-describedby="tvinput"
-                    placeholder="Enter TV Show Name">
-                <small id="searchHelp" class="form-text text-muted">Type in the name of a TV show above</small>
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light justify-content-between">
+            <a class="navbar-brand px-4" href="#">TV Show Search</a>
+            <form class="form-inline d-flex flex-row">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
 
-            </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+                <button class="btn btn-outline-success my-2 my-sm-0 justify-content-left" type="submit">Search</button>
+            </form>
 
+        </nav>
     </div>
     <div id="searchResults"></div>
 

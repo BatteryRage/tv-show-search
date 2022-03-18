@@ -46,7 +46,7 @@ const displayData = async (data) => {
 
 const body = document.querySelector("body");
 const apiSearchURL = "https://api.tvmaze.com/search/shows?q=";
-const searchBar = document.querySelector('input[type="text"]');
+const searchBar = document.querySelector('input[type="search"]');
 
 // const div = document.createElement("div");
 // div.id = "searchResults";

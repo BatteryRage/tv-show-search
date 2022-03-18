@@ -1,3 +1,6 @@
+//import {create} from './createCard.js'
+//import {makeElements} from './createElements.js'
+
 const getTVShow = async (searchText) => {
   try {
     const config = { headers: { Accept: "application/json" } };
@@ -23,34 +26,18 @@ const displayData = async (data) => {
     network: data.show.network.name,
     summary: data.show.summary,
   };
+  
+  makeElements(show);
 
-  console.log(show);
-  const showTitle = document.createElement("h4");
-  const showNetwork = document.createElement("h5");
-  const showSummary = document.createElement("p");
-  const showImg = document.createElement("img");
-  const div = document.querySelector("#searchResults");
-
-  showTitle.append(show.title);
-  showNetwork.append("Network: " + show.network);
-  showSummary.innerHTML = show.summary;
-  imagestr = `<img src="${show.image}" >`;
-  showImg.src = show.image;
-  showImg.style.height = "500px";
-  showImg.style.width = "340px";
-
-  div.append(showTitle, showNetwork, showSummary, showImg);
-  results.append(div);
-  console.log(show.title);
 };
 
 const results = document.querySelector("#searchContainer");
 const apiSearchURL = "https://api.tvmaze.com/search/shows?q=";
 const searchBar = document.querySelector('input[type="search"]');
 
-// const div = document.createElement("div");
-// div.id = "searchResults";
-// document.body.appendChild(div);
+const div = document.createElement("div");
+div.id = "searchResults";
+document.body.appendChild(div);
 
 const form = document.querySelector("form");
 form.addEventListener("submit", (e) => {

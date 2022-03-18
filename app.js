@@ -40,11 +40,11 @@ const displayData = async (data) => {
   showImg.style.width = "340px";
 
   div.append(showTitle, showNetwork, showSummary, showImg);
-  body.append(div);
+  results.append(div);
   console.log(show.title);
 };
 
-const body = document.querySelector("body");
+const results = document.querySelector("#searchContainer");
 const apiSearchURL = "https://api.tvmaze.com/search/shows?q=";
 const searchBar = document.querySelector('input[type="search"]');
 

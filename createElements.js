@@ -10,15 +10,12 @@ const makeElements = (show) => {
   const cardBody = document.createElement("div");
   card.classList.add("card");
   card.classList.add("bg-light");
-  card.classList.add("col-md-5");
-  card.classList.add("m-1");
+  card.classList.add("mb-3");
+  //card.classList.add("m-1");
+  card.style = "max-width: 540px";
   cardBody.classList.add("card-body");
-  showTitle.classList.add("card-title");
-  showNetwork.classList.add("card-subtitle");
-  showSummary.classList.add("card-text");
-  showImg.classList.add("justify-self-center")
 
-  // Add content to elements
+  // Add content to results
   showTitle.append(show.title);
   showNetwork.append("Network: " + show.network);
   showSummary.innerHTML = show.summary;
@@ -27,9 +24,30 @@ const makeElements = (show) => {
   showImg.style.height = "250px";
   showImg.style.width = "170px";
 
-  
-  cardBody.append(showTitle, showNetwork, showSummary, showImg);
-  card.append(cardBody);
+  // Add classes to results items
+  showTitle.classList.add("card-title");
+  showNetwork.classList.add("card-subtitle");
+  showSummary.classList.add("card-text");
+  showImg.classList.add("justify-self-center");
+
+  // Create Row Element
+  const row = document.createElement("div");
+  row.classList.add("row");
+  row.classList.add("no-gutters");
+  row.classList.add("align-items-center");
+
+  // Create Image Column
+  const imgCol = document.createElement("div");
+  imgCol.classList.add("col-md-4");
+
+  // Create text content column
+  const txtCol = document.createElement("div");
+  txtCol.classList.add("col-md-8");
+
+  imgCol.append(showImg);
+  txtCol.append(showTitle, showNetwork, showSummary);
+  row.append(imgCol, txtCol);
+  card.append(row);
   div.append(card);
   results.append(div);
 };
